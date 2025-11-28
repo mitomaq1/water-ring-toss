@@ -13,14 +13,13 @@ const WaterRingToss: React.FC = () => {
   useEffect(() => {
     if (!sceneRef.current) return;
 
-    // Module aliases
-    const Engine = Matter.Engine,
-      Render = Matter.Render,
-      Runner = Matter.Runner,
-      Bodies = Matter.Bodies,
-      Body = Matter.Body,
-      Composite = Matter.Composite,
-      Events = Matter.Events;
+    // Module aliases - using Matter directly is safer if destructuring fails
+    const Engine = Matter.Engine;
+    const Render = Matter.Render;
+    const Runner = Matter.Runner;
+    const Bodies = Matter.Bodies;
+    const Body = Matter.Body;
+    const Composite = Matter.Composite;
 
     // Create engine
     const engine = Engine.create();
